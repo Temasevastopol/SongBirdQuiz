@@ -234,7 +234,7 @@ function preloadImg(){
 // загадываем птицу
 function guessBird(i){
     const guessBird = randomBirds(i) // получили птицу, которую нужно загадать
-    
+    console.log(guessBird)
     const taskAudio = document.querySelector('.task-block audio')
     taskAudio.src = `${guessBird.audio}`
 
@@ -257,9 +257,15 @@ function isTrueAnswer(nameTitle, linkImg){
         return
     }
 
+    
     if(objectAnswer.guess == objectAnswer.answer){
         
         taskBirdsNamesMarkers.forEach(el =>{
+
+            if(el.classList.contains('trueAnswer')){     //от повторного нажатия
+                return
+            }
+            
             if(el.firstElementChild.innerText == objectAnswer.answer){
                 el.classList.add('trueAnswer')               
                 document.querySelector('.task-block h2').textContent = nameTitle
@@ -273,6 +279,11 @@ function isTrueAnswer(nameTitle, linkImg){
         
     } else{
         taskBirdsNamesMarkers.forEach(el =>{
+
+            if(el.classList.contains('falseAnswer')){           //от повторного нажатия
+                return
+            }
+
             if(el.firstElementChild.innerText == objectAnswer.answer){
                 el.classList.add('falseAnswer')
                 
