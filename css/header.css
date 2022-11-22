@@ -77,14 +77,13 @@ header{
     display: none;
   
   }
-  /* ----------------------------------- */
-  
+  /* ----------------------------------- */  
   
   @media (max-width: 781px){
     header{
       justify-content: flex-end;
     }
-  
+    
     .header-logo{
       display: none;
     }
