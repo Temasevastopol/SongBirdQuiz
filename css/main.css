@@ -250,7 +250,24 @@ main{
 /* --------media-------------- */
 @media (max-width: 960px){
   .page-2{
+    grid-template-rows: 20px 2fr 2.5fr 0.5fr;
     row-gap: 0.5%;
+  }
+  .block-answer-describe{
+    grid-template-columns: auto;
+    grid-template-rows: 0.5fr 6fr;
+  }
+  .answer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .answer li{
+    flex-basis: 40%;
+  }
+  .task-block{
+    align-self: center;  
   }
   h2,
   .describe-bird h2{
